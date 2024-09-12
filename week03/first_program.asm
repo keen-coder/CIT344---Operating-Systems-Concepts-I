@@ -42,6 +42,7 @@ dqArr     resdq   500   ; delcare a 500 element doublw quad array
 ;-------------------------------------------------------------------------------
 
 section .text ;-----------------------------------------------------------------
+
 global _start
 _start:
 
@@ -49,7 +50,7 @@ _start:
 	; bResult = bVar1 + bVar2
 
 	mov   al, byte [bVar1]
-	add   al, byte [bVar2]
+	add   al, byte [bVar2] 
 	mov   byte [bResult], al
 
 last:

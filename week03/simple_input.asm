@@ -29,14 +29,14 @@ _start:
 	mov		rax, SYS_read
 	mov		rdi, STDIN
 	mov		rsi, inChar		; message address
-	mov		rdx, 1			; read count
+	mov		rdx, 2			; read count
 	syscall
 
 	; write the data
 	mov		rax, SYS_write
 	mov		rdi, STDOUT
 	mov		rsi, inChar
-	mov		rdx, 1
+	mov		rdx, 2
 	syscall
 
 last:

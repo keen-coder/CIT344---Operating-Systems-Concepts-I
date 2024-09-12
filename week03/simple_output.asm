@@ -10,9 +10,9 @@ section .data ;-----------------------------------------------------------------
 
 STDOUT			equ 	1	; The standard output code (1 is for the console)
 SYS_write		equ		1	; Call code for the write system service
-EXIT_SUCCESS   	equ   0        ; successful program execution
-SYS_exit       	equ   60       ; call code for termination
-LF				equ		10
+EXIT_SUCCESS   equ   0        ; successful program execution
+SYS_exit       equ   60       ; call code for termination
+LF					equ		10
 
 msg		db		"Hello World!", LF
 msgLength	dq		13
