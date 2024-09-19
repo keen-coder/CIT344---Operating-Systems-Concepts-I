@@ -6,11 +6,11 @@ section .data
 ; Variables/Constants with known values go here.
 ; This data will be stored within the program and on the hard drive.
 
-;LF	EQU	10
-;NULL	EQU	0
+LF		EQU	10
+NULL	EQU	0
 
-msg:	db	"Hello World!", 0x0A, 0x00
-msglen:	EQU	$-msg
+msg         db    "Hello World!", LF, NULL
+msglen      EQU   $-msg
 
 section .bss
 ; Undefined varibles until process execution go here
@@ -20,14 +20,14 @@ global _start
 _start:
 
 print:
-	mov	rax, 1
-	mov	rdi, 1
-	mov	rsi, msg
-	mov	rdx, msglen
+   mov  rax, 1
+   mov  rdi, 1
+	mov  rsi, msg
+	mov  rdx, msglen
 	syscall
 
 exit:
-	mov	rax, 60
-	mov	rdi, 0
+	mov  rax, 60
+	mov  rdi, 0
 	syscall
 

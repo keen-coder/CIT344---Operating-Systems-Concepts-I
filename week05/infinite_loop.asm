@@ -22,7 +22,7 @@ STDOUT         equ   1     ; The standard output code (1 is for the console)
 SYS_write      equ   1     ; Call code for the write system service
 
 
-hello    db    "hello world!", NULL, LF
+hello    db    "hello world!", LF, NULL
 helloLen dq    $-hello      ; easy way to get length of string.
                             ; $ is the current address of the program, if you
                             ; subtract the address of the string from the current
