@@ -31,7 +31,7 @@ strLF    db    "",LF
 
 ; initialize a variable with 50 spaces in it to reserve 50 characters 
 strInput    db    "                                                  "
-MAX_CHARS   equ   50
+MAX_CHARS   equ   $-strInput
 
 charsRead      dq    0
 addrCounter    dq    0
@@ -62,12 +62,11 @@ _start:
    ; Decrement rax by 1 so the number of chars read does not include the enter key press
    dec   rax
 
-
-   mov   byte [charsRead], al    ; at this point rax holds the number of chars entered
+   mov   qword [charsRead], rax    ; at this point rax holds the number of chars entered
                                  ; including the enter key press.  we can save that value
                                  ; for later.
 
-   ; print the string character by character
+; print the string character by character
 printCharLoop:
 
    ; print the next character
