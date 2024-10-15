@@ -93,7 +93,6 @@ readFile:
    cmp   rax, 0                  ; check to see if file read was successful
    jl    errorOnRead
 
-   ; add the NULL character to the end of the buffer
    ; NOTE: at this point rax holds the number of characters read
 
 

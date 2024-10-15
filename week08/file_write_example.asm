@@ -100,6 +100,7 @@ writeToFile:
 closeFile:
    mov   rax, SYS_close
    mov   rdi, qword [fileDesc]
+   syscall
    
 printSuccess:
    mov  rax, SYS_write
